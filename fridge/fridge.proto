@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message GetItemsRequest {
+}
+
+message ItemsResponse {
+    repeated Item items = 1;
+}
+
+message Item {
+    string name = 1;
+}
+
+service FridgeService {
+    rpc GetItems(GetItemsRequest) returns (ItemsResponse);
+    rpc AddItem(Item) returns (ItemsResponse);
+}
